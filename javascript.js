@@ -1,33 +1,42 @@
 let total;
 
-function addition(a,b){
+function addition(a, b) {
     total = a + b;
     return total;
 };
-function subtraction(a,b){
+function subtraction(a, b) {
     total = a - b;
     return total;
 }
-function multiplication(a,b){
+function multiplication(a, b) {
     total = a * b;
     return total;
 }
-function division(a,b){
+function division(a, b) {
     total = a / b;
     return total;
 }
 
-let inputArray = [];
+let firstValue = 0;
+let secondValue = 0;
+let operator;
+console.log(operator);
 
-function input(){
-    let btnValue = this.textContent;
-    inputArray.push(btnValue);
+function operation(input){
+    inputInt = parseInt(input);
+    if(inputInt == NaN) {
+        operator = input;
+    } else if (operator === undefined){
+        firstValue += inputInt;
+        console.log(`First Value is ${firstValue}`)
+    } else if((operator === "+")||
+    (operator === "-")||
+    (operator === "/")||
+    (operator === "/")){
+        secondValue += inputInt;
+    } else {
+        return "ERROR";
+    } 
 };
 
-let allButtons = document.querySelectorAll(".btn");
-
-allButtons.addEventListener('click', input());
-
-function equalsBtn(array) {
-    
-};
+operation("+");
